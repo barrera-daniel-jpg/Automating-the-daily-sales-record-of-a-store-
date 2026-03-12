@@ -1,31 +1,16 @@
-from History import add_to_history
+history = []
 
-def product_records():
-    
-    product = input(">> Please enter the item to register: ").capitalize()
-    try:
-        price = float(input(">> Please enter the product price: "))
-        quantity = int(input(">> Please enter the quantity of products sold: "))
-    except ValueError:
-        print("_"*40)
-        print("\nInvalid data. Please enter numbers only.")
-        print("_"*40)
-        return product_records()
-    total = price*quantity
-    
+def add_to_history(producto):
+    history.append(producto)
 
+def show_summary():
     
+    print("\n=========== Sales summary ===========")
+    total_memories = 0
     
-    producto = {
-        "product": product,
-        "price": price,
-        "quantity": quantity,
-        "total": total
-    }
-    add_to_history(producto)
+    for producto in history:
+        print(f">> {producto['product']}: {producto['quantity']} quantity x ${producto['price']} = ${producto['total']}")
+        total_memories += producto['total']
     
-    print("_"*40)
-    print(f"\n>> {producto['product']} It was correctly registered")
-    print(f">> The total amount raised was: ${producto['total']}")
-    print("_"*40)
-    
+    print(f">> Total raised: ${total_memories}")
+    print("="*40)
