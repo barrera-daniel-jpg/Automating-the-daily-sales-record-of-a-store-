@@ -17,15 +17,15 @@ This is the repository where the code for a system that automates a store's dail
 
 ## Code explanation:
 
- ### History.py:
+ ### 1. History.py:
 > * History.py is the program's memory.
 > * It contains a global list history = [] that stores the dictionary containing the product details.
 >* The file has two functions: add_to_history(), which receives the product characteristics and adds them to the global list, and show_summary(), which iterates through that list at the end and prints a summary of each product with its cumulative total.
 
-### Login.py:
+### 2. Login.py:
 >* Login.py is where all user interaction takes place. It has a single function, product_records(), containing a sequence of 5 steps:
 >* It prompts the user for the product name using an input field labeled “product name” (capitalize()), then validates that the price and quantity are numbers and not text strings using try/except ValueError — if they are not, it calls itself recursively, prompting the user for the data again, then calculates the total = price * quantity to determine the total profit, and finally packages the four data points into a dictionary and sends it to add_to_history().
 
-### main.py:
+### 3. main.py:
 >* main.py is the coordinator. 
 >* It imports the functions from the other two files, prints the welcome message, and controls the flow with two key elements: request_option(), which validates that the user enters Y or N using recursion, and the while loop request_option() == ‘Y’, which keeps the program running as long as the user wants to continue adding products. When the user responds with N, the loop ends and show_summary() is executed, creating the summary and terminating the program.
