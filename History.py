@@ -14,4 +14,4 @@ def show_summary(): #Recorre la lista, imprime productos y acumula totales
         total_memories += producto['total']
     
     print(f">> Total raised: ${total_memories}")
-    print("="*40) # Mejora la visualizacion y la experiencia de usuario
+    print("="*40) # Mejora la visualizacion y la experiencia de usuario.
